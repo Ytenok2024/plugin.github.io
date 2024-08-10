@@ -1,89 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Плагины</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  .header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-  }
-  .container {
-    width: 80%;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  .plugin {
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-    margin: 10px 0;
-  }
-  .plugin:last-child {
-    border-bottom: none;
-  }
-  .plugin-title {
-    font-size: 20px;
-    color: #333;
-  }
-  .plugin-desc {
-    font-size: 14px;
-    color: #666;
-  }
-
-  .plugin-requirement {
-  font-size: 14px;
-  color: #edd12f;
-  }
-  .download-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #5D8AA8;
-    color: #fff;
-    text-decoration: none;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
-  .download-button:hover {
-    background-color: #4a708b;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация и вход</title>
 </head>
 <body>
-
-<div class="header">
-  <h1>Плагины</h1>
-</div>
-
-<div class="container">
-  <div class="plugin">
-    <div class="plugin-title">ComputerProgramm 1.0.4</div>
-    <div class="plugin-desc">Плагин для кодирования</div>
-    <a href="#" class="download-button">Скачать</a>
-  </div>
-  <div class="plugin">
-    <div class="plugin-title">ID 1.0</div>
-    <div class="plugin-desc">Плагин добавляющий больше ID</div>
-    <div class="plugin-requirement">Нужен плагин ComputerProgramm</div>
-    <a href="#" class="download-button">Скачать</a>
-  </div>
-  <div class="plugin">
-    <div class="plugin-title">Vault 1.0</div>
-    <!-- Описание для плагина ID -->
-    <div class="plugin-desc">Плагин добавляющий лёгкое создание валюты</div>
-    <a href="#" class="download-button">Скачать</a>
-  </div>
-  <!-- Добавьте дополнительные плагины здесь -->
-</div>
-
+    <form id="registerForm">
+        <input type="text" id="regUsername" placeholder="Имя пользователя" required>
+        <input type="password" id="regPassword" placeholder="Пароль" required>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Имя пользователя" required>
+        <input type="password" id="loginPassword" placeholder="Пароль" required>
+        <button type="submit">Войти</button>
+    </form>
+    <div id="message"></div>
+    <script src="script.js"></script>
 </body>
 </html>
