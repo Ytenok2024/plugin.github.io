@@ -10,7 +10,12 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         },
         body: JSON.stringify({ username, password })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Сетевой ответ не ок.');
+        }
+        return response.json();
+    })
     .then(data => showMessage(data.message))
     .catch(error => showMessage('Ошибка: ' + error.message));
 });
@@ -27,7 +32,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         },
         body: JSON.stringify({ username, password })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Сетевой ответ не ок.');
+        }
+        return response.json();
+    })
     .then(data => showMessage(data.message))
     .catch(error => showMessage('Ошибка: ' + error.message));
 });
