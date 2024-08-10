@@ -1,14 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
+const path = require('path');
 
 const app = express();
 const db = new sqlite3.Database(':memory:');
 
 app.use(bodyParser.json());
-app.use(express.static('public')); // Статические файлы из папки public
+app.use(express.static(__dirname)); // Статические файлы из текущей директории
 
-// Создайте таблицу пользователей
+// Создание таблицы пользователей
 db.serialize(() => {
     db.run("CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, password TEXT, tokens INTEGER)");
 });
