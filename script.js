@@ -45,7 +45,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 function showMessage(msg) {
     const messageDiv = document.getElementById('message');
     messageDiv.innerText = msg;
-    
+
     // Удаляем сообщение через 3 секунды
     setTimeout(() => {
         messageDiv.innerText = '';
