@@ -6,7 +6,7 @@ const app = express();
 const db = new sqlite3.Database(':memory:');
 
 app.use(bodyParser.json());
-app.use(express.static('public')); // Раздача статических файлов
+app.use(express.static('public')); // Статические файлы из папки public
 
 // Создайте таблицу пользователей
 db.serialize(() => {
@@ -45,6 +45,7 @@ app.post('/login', (req, res) => {
     });
 });
 
+// Запуск сервера на порту 3000
 app.listen(3000, () => {
     console.log('Сервер запущен на http://localhost:3000');
 });
