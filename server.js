@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Обслуживание статических файлов из папки public
-app.use(express.static('public'));
+
 
 const saltRounds = 10;
 
